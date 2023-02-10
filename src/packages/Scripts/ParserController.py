@@ -52,13 +52,13 @@ def jsonToH5():
             print(list(item.values()))
             payloadHexNumeric.append(list(item.values()))
 
-    # for item in payloadJsonWise:
-    #     print(list(item.values()))
-    #     payloadWiseNumeric.append(list(item.values()))
+    for item in payloadJsonWise:
+        print(list(item.values()))
+        payloadWiseNumeric.append(list(item.values()))
 
     #criar arquivo h5
     hexH5 = h5py.File("src/dump/hex.h5", "w")
-    # wiseH5 = h5py.File("wise.h5", "w")
+    wiseH5 = h5py.File("wise.h5", "w")
 
 
 
