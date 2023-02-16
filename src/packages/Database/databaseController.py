@@ -28,7 +28,7 @@ def getAllDataFromCollection():
 
 def SaveDataInFile():
     docs = getAllDataFromCollection()
-    with open('src/Database/out/dados.txt', 'w') as outfile:
+    with open('src/packages/Database/out/dados.txt', 'w') as outfile:
         for doc in docs:
             outfile.write(str(doc))
             outfile.write('\n')

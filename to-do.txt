@@ -1,0 +1,2 @@
+- criar csv mais legivel 
+- colocar o time stamp no mesmo arquivo 

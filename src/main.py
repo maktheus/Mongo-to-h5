@@ -1,5 +1,6 @@
 # import databaseController
-from Database.databaseController import SaveDataInFile, getAllDataFromCollection
+from packages.Database.databaseController import SaveDataInFile, getAllDataFromCollection
+from packages.Scripts.ParserController import getPayload
 
 def main():
     SaveDataInFile()
