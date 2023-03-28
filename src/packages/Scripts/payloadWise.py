@@ -5,6 +5,7 @@ from ParserController import payloadWise
 def payloadWiseParser():
     res = []
     for item in payloadWise():
+        print(item)
         payload = item.get("payload")
         time = item.get("time")
         payload = json.loads(payload)
