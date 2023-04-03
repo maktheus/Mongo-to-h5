@@ -3,8 +3,8 @@ from packages.Database.databaseController import (
     SaveDataInFile,
     getAllDataFromCollection,
 )
-from packages.Scripts.ParserController import getPayload
-from packages.Scripts.toH5AndCsv import toH5AndCsv
+from Controllers.PayloadControllers.ParserController import getPayload
+from Controllers.DatabaseControllers.toH5AndCsv import toH5AndCsv
 
 
 def main():
