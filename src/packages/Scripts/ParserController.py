@@ -1,4 +1,3 @@
-
 import sys
 import json
 import h5py
@@ -10,22 +9,20 @@ from packages.Database.databaseController import getAllDataFromCollection
 
 payload = []
 
+
 def getPayload():
     dataFromDataBase = getAllDataFromCollection()
     for doc in dataFromDataBase:
         dataPayload = doc.get("payload")
         dataTime = doc.get("timestamp")
 
-        data = {
-            "time": dataTime,
-            "payload": dataPayload
-        }
+        data = {"time": dataTime, "payload": dataPayload}
 
         payload.append(data)
 
     return payload
 
-        
+
 def dataSeparation():
     data = getPayload()
     payloadWise = []
@@ -34,18 +31,15 @@ def dataSeparation():
     for item in data:
         payload = item.get("payload")
         time = item.get("time")
-        data = {
-            "time": time,
-            "payload": payload
-        }
+        data = {"time": time, "payload": payload}
         # se tiver bn na str retirar [ ] e separar por virgula
         if "bn" in payload and "74FE48FFFF6D8845" in payload:
-           payloadWise.append(data)
+            payloadWise.append(data)
         elif "bn" in payload and "74FE48FFFF6D8845" not in payload:
             payloadKS.append(data)
         else:
             payloadHex.append(data)
-        
+
     return payloadWise, payloadHex, payloadKS
 
 
@@ -54,18 +48,20 @@ def payloadWise():
 
     return payloadWise
 
+
 def payloadHex():
     payloadHex = dataSeparation()[1]
     return payloadHex
 
+
 def payloadKS():
     payloadKS = dataSeparation()[2]
     return payloadKS
-            
+
 
 # def jsonToH5():
 #     payloadJsonHex, payloadJsonWise = jsonSeparation()
-    
+
 #     payloadHexNumeric = []
 #     payloadWiseNumeric = []
 
@@ -82,7 +78,6 @@ def payloadKS():
 #     #criar arquivo h5
 #     hexH5 = h5py.File("src/dump/hex.h5", "w")
 #     wiseH5 = h5py.File("wise.h5", "w")
-
 
 
 # import h5py
@@ -107,12 +102,11 @@ def payloadKS():
 
 
 def main():
-    a ,b ,c = dataSeparation()
-    
-    
+    a, b, c = dataSeparation()
+
     # jsonToH5()
     # jsonToCsv()
-    
+
 
 if __name__ == "__main__":
     main()

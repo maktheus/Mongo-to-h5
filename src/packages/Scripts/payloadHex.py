@@ -1,8 +1,9 @@
 import json
 from ParserController import payloadHex
 
+
 def payloadHexParser():
-    res =[]
+    res = []
     for item in payloadHex():
         payload = item.get("payload")
         time = item.get("time")
@@ -14,8 +15,10 @@ def payloadHexParser():
 
     return res
 
+
 def main():
     payloadHexParser()
+
 
 if __name__ == "__main__":
     main()
